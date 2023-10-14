@@ -15,4 +15,13 @@ describe LinkedList do
 
         expect(list.head).to eq(nil)
     end
+
+    it "appends a node" do
+        list = LinkedList.new
+        list.append("doop")
+
+        expect(list.head).to be_a Node
+        expect(list.head.data).to eq("doop")
+        require 'pry'; binding.pry
+    end
 end
