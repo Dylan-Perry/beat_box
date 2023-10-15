@@ -35,11 +35,21 @@ describe LinkedList do
         expect(list.head.next_node.data).to eq("doop")
     end
 
+    it "counts the nodes" do
+        list = LinkedList.new
+        list.append("doop")
+        list.append("snoop")
+        list.append("blarp")
 
-    # it "counts the nodes" do
-    #     list = LinkedList.new
-    #     list.append("doop")
+        expect(list.count).to eq(3)
+    end
 
-    #     expect(list.count).to eq(1)
-    # end
+    it "prints the list to a string" do
+        list = LinkedList.new
+        list.append("doop")
+        list.append("snoop")
+        list.append("blarp")
+
+        expect(list.to_string).to eq("doop snoop blarp")
+    end
 end
