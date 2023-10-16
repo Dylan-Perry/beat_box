@@ -90,4 +90,15 @@ describe LinkedList do
         expect(list.to_string).to eq("woo doop snoop blarp")
     end
 
+    it "inserts a node into an empty list at head" do
+        list_1 = LinkedList.new
+        list_1.insert(0, "blarp")
+        list_2 = LinkedList.new
+        list_2.insert(3, "blarp")
+
+        expect(list_1.to_string).to eq("blarp")
+        expect(list_2.to_string).to eq("blarp")
+    end
+
+
 end
