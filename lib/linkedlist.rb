@@ -126,4 +126,20 @@ class LinkedList
             end
         end
     end
+
+    def pop
+        if !@head
+            "Error: List contains no data"
+        else
+            current_node = @head
+            until current_node.next_node == nil
+                previous_node = current_node
+                current_node = current_node.next_node
+            end
+            popped_string = current_node.data
+            current_node = nil
+            previous_node.next_node = nil
+            popped_string
+        end
+    end
 end

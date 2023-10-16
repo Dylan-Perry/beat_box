@@ -124,4 +124,14 @@ describe LinkedList do
         expect(list.includes?("Blarp")).to be true
         expect(list.includes?("credit score")).to be false
     end
+
+    it "removes the last element from a list and returns it" do
+        list = LinkedList.new
+        list.append("doop")
+        list.append("snoop")
+        list.append("blarp")
+
+        expect(list.pop).to eq("blarp")
+        expect(list.includes?("blarp")).to be false
+    end
 end
