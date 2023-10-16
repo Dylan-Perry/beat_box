@@ -103,4 +103,27 @@ class LinkedList
             final_string
         end
     end
+
+    def includes?(node_data)
+        if !@head
+            "Error: List contains no data"
+        else
+            node_data = node_data.downcase
+            current_node = @head
+            while current_node.next_node != nil
+                current_node.data = current_node.data.downcase
+                if current_node.data == node_data
+                    return true
+                else
+                    current_node = current_node.next_node
+                end
+            end
+            current_node.data = current_node.data.downcase
+            if current_node.data == node_data
+                return true
+            else
+                return false
+            end
+        end
+    end
 end

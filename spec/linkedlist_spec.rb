@@ -113,5 +113,15 @@ describe LinkedList do
         expect(list.find(1,3)).to eq("snoop blarp hibiscus")
     end
 
-    
+    it "scans a list for a specified value and returns true/false if the element is present/missing respectively" do
+        list = LinkedList.new
+        list.append("doop")
+        list.append("snoop")
+        list.append("blarp")
+        list.append("hibiscus")
+
+        expect(list.includes?("blarp")).to be true
+        expect(list.includes?("Blarp")).to be true
+        expect(list.includes?("credit score")).to be false
+    end
 end
