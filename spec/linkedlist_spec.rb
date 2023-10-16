@@ -100,5 +100,18 @@ describe LinkedList do
         expect(list_2.to_string).to eq("blarp")
     end
 
+    it "returns a specified number of nodes at a specified index" do
+        list = LinkedList.new
+        list.append("doop")
+        list.append("snoop")
+        list.append("blarp")
+        list.append("hibiscus")
 
+        expect(list.find(2,1)).to eq("blarp")
+        expect(list.find(3,1)).to eq("hibiscus")
+        expect(list.find(0,2)).to eq("doop snoop")
+        expect(list.find(1,3)).to eq("snoop blarp hibiscus")
+    end
+
+    
 end
