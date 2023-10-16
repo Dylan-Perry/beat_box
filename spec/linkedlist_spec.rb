@@ -80,5 +80,14 @@ describe LinkedList do
         expect(list.to_string).to eq("doop woo snoop blarp")
     end
 
+    it "inserts a node in the list at head node (index 0)" do
+        list = LinkedList.new
+        list.append("doop")
+        list.append("snoop")
+        list.append("blarp")
+        list.insert(0, "woo")
+
+        expect(list.to_string).to eq("woo doop snoop blarp")
+    end
 
 end
