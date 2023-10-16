@@ -59,15 +59,26 @@ describe LinkedList do
         expect(list.to_string).to eq("Error: list contains no data.")
     end
 
-    # it "prepends the list with a node" do
-    #     list = LinkedList.new
-    #     list.append("doop")
-    #     list.append("snoop")
+    it "prepends the list with a node" do
+        list = LinkedList.new
+        list.prepend("doop")
+        list.prepend("snoop")
 
-    #     expect(list.head).to be_a Node
-    #     expect(list.head.data).to eq("snoop")
-    #     expect(list.head.next_node).to be_a Node
-    #     expect(list.head.next_node.data).to eq("doop")
-    # end
+        expect(list.head).to be_a Node
+        expect(list.head.data).to eq("snoop")
+        expect(list.head.next_node).to be_a Node
+        expect(list.head.next_node.data).to eq("doop")
+    end
+
+    it "inserts a node in the list at a location after head node" do
+        list = LinkedList.new
+        list.append("doop")
+        list.append("snoop")
+        list.append("blarp")
+        list.insert(1, "woo")
+
+        expect(list.to_string).to eq("doop woo snoop blarp")
+    end
+
 
 end
