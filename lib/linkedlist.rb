@@ -63,7 +63,7 @@ class LinkedList
             if index == 0
                 @head = Node.new(node_data)
             else
-                "Note: Data inserted at beginning of list, since list was empty"
+                puts "Note: Since list was empty, inserted data at beginning of list instead of specified location"
                 @head = Node.new(node_data)
             end
         else
