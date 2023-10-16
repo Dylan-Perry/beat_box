@@ -57,4 +57,31 @@ class LinkedList
             @head = Node.new(node_data)
         end
     end
+
+    def insert(index, node_data)
+        if !@head
+            if index == 0
+                @head = Node.new(node_data)
+            else
+                "Note: Data inserted at beginning of list, since list was empty"
+                @head = Node.new(node_data)
+            end
+        else
+            if index == 0
+                current_head = @head
+                @head = Node.new(node_data)
+                head.next_node = current_head
+            else
+                current_node = @head
+                until index == 1
+                    current_node = current_node.next_node
+                    index -= 1
+                end
+                inserted_node = Node.new(node_data)
+                new_next_node = current_node.next_node
+                inserted_node.next_node = new_next_node
+                current_node.next_node = inserted_node
+            end
+        end
+    end
 end
