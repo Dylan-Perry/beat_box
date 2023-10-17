@@ -21,6 +21,16 @@ describe BeatBox do
         expect(bb.list.head.next_node.data).to eq("doo")
     end
 
+    it "prepends individual nodes" do
+        bb = BeatBox.new
+        bb.prepend("doo ditt")
+
+        expect(bb.list.head).to be_a Node
+        expect(bb.list.head.data).to eq("ditt")
+        expect(bb.list.head.next_node).to be_a Node
+        expect(bb.list.head.next_node.data).to eq("doo")
+    end
+
     it "counts the number of nodes" do
         bb = BeatBox.new
         bb.append("deep doo ditt")
@@ -34,4 +44,10 @@ describe BeatBox do
         bb.play
     end
 
+    it "only allows validated beats to be appended or prepended" do
+        bb = BeatBox.new
+
+        expect(bb.append("mississippi")).to eq("Error: input contains invalid beats")
+        expect(bb.prepend("mississippi")).to eq("Error: input contains invalid beats")
+    end
 end
