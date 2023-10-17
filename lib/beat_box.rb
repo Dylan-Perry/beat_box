@@ -20,6 +20,17 @@ class BeatBox
         end
     end
 
+    def prepend(nodes_string)
+        nodes_array = nodes_string.split
+        nodes_array.each do |node|
+            if @valid_beats.include?(node)
+                @list.prepend(node)
+            else
+                "Error: input contains invalid beats"
+            end
+        end
+    end
+
     def count
         @list.count
     end
