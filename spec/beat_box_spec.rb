@@ -6,15 +6,13 @@ require "./lib/beat_box.rb"
 describe BeatBox do
 
     it "exists" do
-        list = LinkedList.new
-        bb = BeatBox.new(list)
+        bb = BeatBox.new
 
         expect(bb).to be_a BeatBox
     end
 
     it "appends individual nodes" do
-        list = LinkedList.new
-        bb = BeatBox.new(list)
+        bb = BeatBox.new
         bb.append("deep doo ditt")
 
         expect(bb.list.head).to be_a Node

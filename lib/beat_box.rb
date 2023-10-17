@@ -4,8 +4,8 @@ require "./lib/linked_list.rb"
 class BeatBox
     attr_accessor :list
 
-    def initialize(list)
-        @list = list
+    def initialize
+        @list = LinkedList.new
     end
 
     def append(nodes_string)
