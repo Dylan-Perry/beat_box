@@ -6,7 +6,7 @@ class BeatBox
 
     def initialize
         @list = LinkedList.new
-        @valid_beats = ["tee", "dee", "deep", "bop", "boop", "la", "na"]
+        @valid_beats = ["tee", "dee", "deep", "bop", "boop", "la", "na", "ditt", "doo"]
     end
 
     def append(nodes_string)
@@ -15,7 +15,7 @@ class BeatBox
             if @valid_beats.include?(node)
                 @list.append(node)
             else
-                "Error: input contains invalid beats"
+                return "Error: input contains invalid beats"
             end
         end
     end
@@ -26,7 +26,7 @@ class BeatBox
             if @valid_beats.include?(node)
                 @list.prepend(node)
             else
-                "Error: input contains invalid beats"
+                return "Error: input contains invalid beats"
             end
         end
     end
