@@ -50,4 +50,10 @@ describe BeatBox do
         expect(bb.append("mississippi")).to eq("Error: input contains invalid beats")
         expect(bb.prepend("mississippi")).to eq("Error: input contains invalid beats")
     end
+
+    it "accepts inputs for rate and voice" do
+        bb = BeatBox.new(valid_beats = "tee dee deep bop boop la na ditt doo mississippi", rate = 500, voice = "boing")
+        bb.append("mississippi deep doo ditt tee dee deep boop bop la na ditt mississippi mississippi")
+        bb.play
+    end
 end
