@@ -14,4 +14,8 @@ class BeatBox
             @list.append(node)
         end
     end
+
+    def count
+        @list.count
+    end
 end
