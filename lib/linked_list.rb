@@ -49,9 +49,9 @@ class LinkedList
 
     def prepend(node_data)
         if @head
-            current_head = @head
+            current_node = @head
             @head = Node.new(node_data)
-            head.next_node = current_head
+            head.next_node = current_node
         else
             @head = Node.new(node_data)
         end
@@ -67,9 +67,9 @@ class LinkedList
             end
         else
             if index == 0
-                current_head = @head
+                current_node = @head
                 @head = Node.new(node_data)
-                head.next_node = current_head
+                head.next_node = current_node
             else
                 current_node = @head
                 until index == 1
