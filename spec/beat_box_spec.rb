@@ -56,4 +56,12 @@ describe BeatBox do
         bb.append("mississippi deep doo ditt tee dee deep boop bop la na ditt mississippi mississippi")
         bb.play
     end
+
+    it "resets rate and voice variables" do
+        bb = BeatBox.new(valid_beats = "tee dee deep bop boop la na ditt doo mississippi", rate = 500, voice = "boing")
+        bb.append("mississippi deep doo ditt tee dee")
+        bb.reset_rate
+        bb.reset_voice
+        bb.play
+    end
 end

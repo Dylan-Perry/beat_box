@@ -41,4 +41,12 @@ class BeatBox
         beat = @list.to_string
         `say -r #{@rate} -v #{@voice} #{beat}`
     end
+
+    def reset_rate
+        @rate = 0
+    end
+
+    def reset_voice
+        @voice = "junior"
+    end
 end
