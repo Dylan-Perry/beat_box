@@ -6,13 +6,13 @@ require "./lib/beat_box.rb"
 describe BeatBox do
 
     it "exists" do
-        bb = BeatBox.new("tee dee deep bop boop la na ditt doo", 100, "junior")
+        bb = BeatBox.new
 
         expect(bb).to be_a BeatBox
     end
 
     it "appends individual nodes" do
-        bb = BeatBox.new("tee dee deep bop boop la na ditt doo", 100, "junior")
+        bb = BeatBox.new
         bb.append("deep doo ditt")
 
         expect(bb.list.head).to be_a Node
@@ -22,7 +22,7 @@ describe BeatBox do
     end
 
     it "prepends individual nodes" do
-        bb = BeatBox.new("tee dee deep bop boop la na ditt doo", 100, "junior")
+        bb = BeatBox.new
         bb.prepend("doo ditt")
 
         expect(bb.list.head).to be_a Node
@@ -32,20 +32,20 @@ describe BeatBox do
     end
 
     it "counts the number of nodes" do
-        bb = BeatBox.new("tee dee deep bop boop la na ditt doo", 100, "junior")
+        bb = BeatBox.new
         bb.append("deep doo ditt")
 
         expect(bb.count).to eq(3)
     end
 
     it "plays the sounds" do
-        bb = BeatBox.new("tee dee deep bop boop la na ditt doo", 100, "junior")
+        bb = BeatBox.new
         bb.append("deep doo ditt")
         bb.play
     end
 
     it "only allows validated beats to be appended or prepended" do
-        bb = BeatBox.new("tee dee deep bop boop la na ditt doo", 100, "junior")
+        bb = BeatBox.new
 
         expect(bb.append("mississippi")).to eq("Error: input contains invalid beats")
         expect(bb.prepend("mississippi")).to eq("Error: input contains invalid beats")

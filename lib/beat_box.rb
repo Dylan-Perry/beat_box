@@ -4,7 +4,7 @@ require "./lib/linked_list.rb"
 class BeatBox
     attr_accessor :list, :valid_beats, :rate, :voice
 
-    def initialize(valid_beats, rate, voice)
+    def initialize(valid_beats = "tee dee deep bop boop la na ditt doo", rate = 0, voice = "junior")
         @list = LinkedList.new
         @valid_beats = valid_beats.split
         @rate = rate
@@ -39,6 +39,6 @@ class BeatBox
 
     def play
         beat = @list.to_string
-        `say -v junior #{beat}`
+        `say -r #{rate} -v #{voice} #{beat}`
     end
 end
