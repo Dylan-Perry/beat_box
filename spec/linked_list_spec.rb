@@ -1,6 +1,6 @@
 require "pry"
 require "./lib/node.rb"
-require "./lib/linkedlist.rb"
+require "./lib/linked_list.rb"
 
 describe LinkedList do
 
