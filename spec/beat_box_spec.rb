@@ -34,4 +34,10 @@ describe BeatBox do
         bb.play
     end
 
+    it "only allows validated beats to be appended or prepended" do
+        bb = BeatBox.new
+
+        expect(bb.append("mississippi")).to eq("Error: input contains invalid beats")
+        expect(bb.prepend("mississippi")).to eq("Error: input contains invalid beats")
+    end
 end
