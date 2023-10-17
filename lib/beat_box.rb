@@ -18,4 +18,9 @@ class BeatBox
     def count
         @list.count
     end
+
+    def play
+        beat = @list.to_string
+        `say -v junior #{beat}`
+    end
 end
