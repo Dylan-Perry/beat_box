@@ -93,13 +93,13 @@ class LinkedList
                 current_node = current_node.next_node
                 index -= 1
             end
-            final_string = current_node.data
+            string = current_node.data
             while current_node.next_node != nil && element_count > 1
                 current_node = current_node.next_node
-                final_string << " #{current_node.data}"
+                string = string + " #{current_node.data}"
                 element_count -= 1
             end
-            final_string
+            string
         end
     end
 
