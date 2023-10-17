@@ -2,11 +2,13 @@ require "./lib/node.rb"
 require "./lib/linked_list.rb"
 
 class BeatBox
-    attr_accessor :list
+    attr_accessor :list, :valid_beats, :rate, :voice
 
-    def initialize
+    def initialize(valid_beats, rate, voice)
         @list = LinkedList.new
-        @valid_beats = ["tee", "dee", "deep", "bop", "boop", "la", "na", "ditt", "doo"]
+        @valid_beats = valid_beats.split
+        @rate = rate
+        @voice = voice
     end
 
     def append(nodes_string)
